@@ -13,6 +13,7 @@ jobs:
           directory: ./public_html
           check_html: true
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

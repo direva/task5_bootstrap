@@ -14,7 +14,6 @@ jobs:
           check_html: true
   build:
     needs: test
-    lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:

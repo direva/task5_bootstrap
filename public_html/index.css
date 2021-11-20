@@ -1,0 +1,344 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+}
+
+header {
+    height: 80px;
+    padding-left: 104px;
+    padding-right: 104px;
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+}
+
+.logo {
+    margin-top: 26px;
+    font-family: Roboto Slab;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.main-menu-list {
+    list-style-type: none;
+    margin-top: 26px;
+}
+
+.main-menu-list-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 320px) { 
+    header {
+        height: 56px;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-shadow: inset 0px -1px 0px #D1D2D6;
+    }
+    .main-menu-list {
+        display: none;
+    }
+    .main-menu-list-mobile {
+        display: block;
+        margin-top: 26px;
+    }
+}
+
+.main-menu-list li {
+    position: relative;
+    display: inline;
+    font-family: Roboto Medium;
+    font-size: 18px;
+    line-height: 24px;
+    margin-right: 34px;
+}
+
+.main-menu-item-active::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #1A1B22;
+    top: calc(100% + 28px);
+}
+
+.user-name {
+    display: block;
+    border: 1px solid black;
+    padding: 12px 19px;
+    border-radius: 30px;
+}
+
+.user-name i {
+    margin-left: 10px;
+}
+
+.saved-articles-head {
+    margin-top: 40px;
+    padding-left: 104px;
+    width: 530px;
+}
+
+@media screen and (max-width: 320px) { 
+    .saved-articles-head {
+        margin-top: 8px;
+        padding-left: 16px;
+        width: 288px;
+    }
+
+    h1 {
+        margin-top: 8px;
+    }
+}
+
+h1 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h2 {
+    margin-top: 28px;
+    font-family: Roboto Slab;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.saved-articles-head__keywords {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.saved-articles {
+    background-color: rgb(245, 246, 247);
+    margin-top: 57px;
+}
+
+.saved-articles .container {
+    padding: 57px 13px;
+}
+
+@media screen and (max-width: 320px) { 
+    .saved-articles {
+        background-color: rgb(245, 246, 247);
+    }
+
+    .saved-articles .container {
+        padding: 24px 16px;
+        padding-left: 30px;
+    }
+}
+
+.row {
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.card {
+    position: relative;
+    height: 576px;
+    width: 400px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.card img {
+    width: 400px;
+    height: 272px;
+}
+
+.card-button {
+    background-color: white;
+    padding: 8px 12px;
+    font-family: Roboto Medium;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 10px;
+}
+
+.card-topic {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+.card-action {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: none;
+}
+
+.card-function {
+    position: absolute;
+    top: 24px;
+    right: 69px;
+    border: none;
+}
+
+.card-action__blocked {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+    padding: 24px 24px 44px 24px;
+}
+
+time.card-subtitle {
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.card-title {
+    font-family: Roboto Slab;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 22px;
+    width: 102%;
+}
+
+.card-source {
+    position: absolute;
+    font-family: Roboto Slab;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    bottom: 24px;
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        position: relative;
+        height: 440px;
+        width: 288px;
+        box-sizing: border-box;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .card img {
+        width: 288px;
+        height: 196px;
+    }
+    
+    .card-function {
+        display: none;
+    }
+    
+    .card-action {
+        color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .card-body {
+        padding: 16px;
+    }    
+    
+    .card-title {
+        font-family: Roboto Slab;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .card-text {
+        height: 64px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .card-source {
+        position: absolute;
+        font-family: Roboto Slab;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        bottom: 16px;
+    }
+}
+
+footer {
+    height: 80px;
+    padding-left: 52px;
+    padding-right: 104px;
+}
+
+.footer-copyright {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.footer-menu-list {
+    list-style-type: none;
+    margin-top: 26px;   
+}
+
+.footer-menu-list li {
+    display: inline;
+    font-size: 18px;
+    line-height: 24px;
+    margin-right: 34px;   
+}
+
+.footer-menu-list .footer-menu-icon {
+    margin-right: 24px;
+}
+
+@media screen and (max-width: 320px) {
+    footer {
+        height: 176px;
+        width: 320px;
+        padding-left: 16px;
+        padding-right: 16px;
+        flex-direction: column-reverse;
+    }
+
+    .footer-menu-list {
+        position: relative;
+    }
+
+    .footer-copyright {
+        margin-top: auto;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 22px;   
+    }
+
+    .footer-menu-list {
+        list-style-type: none;
+        margin-top: 20px; 
+        padding: 0;  
+    }
+    
+    .footer-menu-list li {
+        display: inline;
+        font-size: 18px;
+        line-height: 48px;   
+        margin-right: 45px;
+    }
+    
+    .footer-menu-list .footer-menu-icon {
+        position: absolute;
+        top: 0;
+        right: 16px;
+        margin-right: 0;
+    }
+
+    .footer-menu-list .footer-menu-icon:last-child {
+        right: 64px;
+    }
+}

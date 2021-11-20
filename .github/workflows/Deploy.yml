@@ -10,10 +10,23 @@ jobs:
       - name: Proof HTML
         uses: anishathalye/proof-html@v1.2.0
         with:
-          directory: ./public_html
+          directory: ./src
           check_html: true
-  deploy:
+  build:
     needs: test
+    lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm run build
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

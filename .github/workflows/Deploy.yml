@@ -1,4 +1,4 @@
-name: Test
+name: Deploy
 
 on: [push]
 
@@ -12,25 +12,8 @@ jobs:
         with:
           directory: ./src
           check_html: true
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: public_html
-          path: public_html
   deploy:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

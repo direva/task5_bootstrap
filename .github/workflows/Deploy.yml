@@ -25,6 +25,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: public_html
+          path: public_html
   deploy:
     needs: build
     runs-on: ubuntu-latest
